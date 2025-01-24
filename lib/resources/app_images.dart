@@ -7,4 +7,11 @@ class AppImages {
   String book = "assets/book.png";
   String game = "assets/game.png";
   String mechanic = "assets/mechanic.png";
+
+  String home = "assets/home.png";
+  String list = "assets/list.png";
+  String checklist = "assets/checklist.png";
+  String girl = "assets/girl.png";
+
+  String books = "assets/books.png";
 }

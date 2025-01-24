@@ -14,7 +14,6 @@ class FirstScreenView extends StatefulWidget {
 
 class _FirstScreenViewState extends State<FirstScreenView> {
   AppColors appColors = AppColors();
-  List selectedIndex = [];
   List colorList = [];
   int selectedDate = 0;
 

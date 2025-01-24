@@ -3,21 +3,23 @@ import 'package:get/get.dart';
 import 'package:shajin_app/resources/app_colors.dart';
 import 'package:shajin_app/resources/datas.dart';
 import 'package:shajin_app/resources/ui_helper.dart';
+import 'package:shajin_app/ui/bottom_bar.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class HabitsListScreen extends StatefulWidget {
+  const HabitsListScreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HabitsListScreen> createState() => _HabitsListScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HabitsListScreenState extends State<HabitsListScreen> {
   AppColors appColors = AppColors();
   List selectedIndex = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appColors.whiteclr,
       body: SafeArea(
         top: true,
         child: Container(
@@ -69,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               GestureDetector(
                 onTap: () {
                   if (selectedIndex.length > 1) {
+                    Get.to(() => const BottomNavigationBarView());
                   } else {
                     Get.snackbar(
                       "Warning",

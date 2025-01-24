@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class UIHelper {
   // Vertically Space Provider
@@ -41,5 +42,28 @@ class UIHelper {
                 )
               ]
             : []);
+  }
+
+  //Circle Container Style Provider
+  static BoxDecoration circleBorderBox(Color backgroundColor, {Color borderColor = Colors.transparent, double borderWidth = 0}) {
+    return BoxDecoration(
+      shape: BoxShape.circle,
+      color: backgroundColor,
+      border: Border.all(width: borderWidth, color: borderColor),
+    );
+  }
+
+  // Text and Style Provider
+  static Widget appBarWidget(String title) {
+    return Container(
+      height: 50,
+      width: Get.width,
+      alignment: Alignment.center,
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Image.asset("assets/menu.png", height: 25, width: 25),
+        titleTextStyle(title, 15, false),
+        Image.asset("assets/calendar.png", height: 25, width: 25),
+      ]),
+    );
   }
 }
