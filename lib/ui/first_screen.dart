@@ -83,17 +83,23 @@ class _FirstScreenViewState extends State<FirstScreenView> {
           scrollDirection: Axis.horizontal,
           itemCount: dayList.length,
           itemBuilder: (context, i) {
-            return Container(
-              height: 100,
-              width: 70,
-              decoration: UIHelper.roundedBorderWithColor(15, appColors.errorBorder),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  UIHelper.titleTextStyle(dayList[i]['title'], 18, false, fontclr: appColors.whiteclr),
-                  UIHelper.verticalSpaceSmall,
-                  UIHelper.titleTextStyle(dayList[i]['id'], 20, false, fntweight: FontWeight.bold, fontclr: appColors.whiteclr),
-                ],
+            return GestureDetector(
+              onTap: () {
+                selectedDate = i;
+                setState(() {});
+              },
+              child: Container(
+                width: 70,
+                margin: const EdgeInsets.all(5),
+                decoration: UIHelper.roundedBorderWithColor(15, selectedDate == i ? appColors.primaryclr : appColors.whiteclr, isShadow: true),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    UIHelper.titleTextStyle(dayList[i]['title'], 18, false, fontclr: selectedDate == i ? appColors.whiteclr : appColors.blackclr),
+                    UIHelper.verticalSpaceSmall,
+                    UIHelper.titleTextStyle(dayList[i]['id'], 20, false, fntweight: FontWeight.bold, fontclr: selectedDate == i ? appColors.whiteclr : appColors.blackclr),
+                  ],
+                ),
               ),
             );
           },
@@ -120,7 +126,8 @@ class _FirstScreenViewState extends State<FirstScreenView> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(16),
               width: Get.width / 2.5,
-              decoration: UIHelper.roundedBorderWithColor(15, bgclr.withOpacity(0.2)),
+              // ignore: deprecated_member_use
+              decoration: UIHelper.roundedBorderWithColor(15, bgclr.withOpacity(0.1)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,

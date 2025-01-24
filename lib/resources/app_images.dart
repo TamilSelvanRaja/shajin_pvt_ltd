@@ -14,4 +14,5 @@ class AppImages {
   String girl = "assets/girl.png";
 
   String books = "assets/books.png";
+  String fire = "assets/fire.png";
 }

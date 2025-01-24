@@ -4,6 +4,7 @@ import 'package:shajin_app/resources/app_colors.dart';
 import 'package:shajin_app/resources/datas.dart';
 import 'package:shajin_app/resources/ui_helper.dart';
 import 'package:shajin_app/ui/first_screen.dart';
+import 'package:shajin_app/ui/second_screen.dart';
 
 class BottomNavigationBarView extends StatefulWidget {
   const BottomNavigationBarView({super.key});
@@ -26,7 +27,7 @@ class _BottomNavigationBarViewState extends State<BottomNavigationBarView> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(child: FirstScreenView()),
+            Expanded(child: selectedIndex == 0 ? const FirstScreenView() : const SecondScreenView()),
             UIHelper.verticalSpaceSmall,
             Container(
               height: 50,

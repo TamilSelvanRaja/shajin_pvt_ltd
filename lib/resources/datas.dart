@@ -34,3 +34,24 @@ List dayList = [
   {"id": "06", "title": "Fri"},
   {"id": "07", "title": "Sat"},
 ];
+
+List analyzeList = [
+  {"id": "01", "count": 80.0},
+  {"id": "02", "count": 120.0},
+  {"id": "03", "count": 50.0},
+  {"id": "04", "count": 80.0},
+  {"id": "05", "count": 100.0},
+  {"id": "06", "count": 120.0},
+  {"id": "07", "count": 50.0},
+];
+
+List repetedimageList = [
+  AppImages().travel,
+  AppImages().book,
+  AppImages().game,
+  AppImages().mechanic,
+  AppImages().workout,
+  AppImages().food,
+  AppImages().mic,
+  AppImages().paint,
+];

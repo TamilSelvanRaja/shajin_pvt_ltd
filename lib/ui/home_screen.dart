@@ -50,6 +50,7 @@ class _HabitsListScreenState extends State<HabitsListScreen> {
                       width: Get.width / 2.5,
                       decoration: UIHelper.roundedBorderWithColor(
                         15,
+                        // ignore: deprecated_member_use
                         selectedIndex.contains(i) ? appColors.primarylightclr.withOpacity(0.2) : appColors.whiteclr,
                         isShadow: selectedIndex.contains(i) ? false : true,
                         borderColor: selectedIndex.contains(i) ? appColors.primaryclr : appColors.whiteclr,

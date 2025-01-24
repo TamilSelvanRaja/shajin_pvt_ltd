@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shajin_app/resources/app_colors.dart';
 
 class UIHelper {
   // Vertically Space Provider
@@ -27,8 +28,7 @@ class UIHelper {
   }
 
   //Container Style Provider with shadow
-  static BoxDecoration roundedBorderWithColor(double radius, Color backgroundColor,
-      {Color borderColor = Colors.transparent, double borderWidth = 1, bool isShadow = false, Color shadowcolor = Colors.black45}) {
+  static BoxDecoration roundedBorderWithColor(double radius, Color backgroundColor, {Color borderColor = Colors.transparent, double borderWidth = 1, bool isShadow = false, Color shadowcolor = Colors.black45}) {
     return BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(radius)),
         border: Border.all(width: borderWidth, color: borderColor),
@@ -60,9 +60,17 @@ class UIHelper {
       width: Get.width,
       alignment: Alignment.center,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Image.asset("assets/menu.png", height: 25, width: 25),
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: circleBorderBox(AppColors().whiteclr, borderColor: AppColors().grey),
+          child: Image.asset("assets/menu.png", height: 20, width: 20),
+        ),
         titleTextStyle(title, 15, false),
-        Image.asset("assets/calendar.png", height: 25, width: 25),
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: circleBorderBox(AppColors().whiteclr, borderColor: AppColors().grey),
+          child: Image.asset("assets/calendar.png", height: 20, width: 20),
+        ),
       ]),
     );
   }
