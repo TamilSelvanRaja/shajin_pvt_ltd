@@ -48,30 +48,42 @@ class _FirstScreenViewState extends State<FirstScreenView> {
   }
 
   Widget noticicationWidget() {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: UIHelper.roundedBorderWithColor(15, appColors.blackclr),
-      child: Row(
-        children: [
-          Container(
-            decoration: UIHelper.circleBorderBox(appColors.grey),
-            padding: const EdgeInsets.all(10),
-            child: Image.asset(AppImages().books, height: 50, width: 50),
+    return Stack(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(16),
+          decoration: UIHelper.roundedBorderWithColor(15, appColors.blackclr),
+          child: Row(
+            children: [
+              Container(
+                decoration: UIHelper.circleBorderBox(appColors.grey),
+                padding: const EdgeInsets.all(10),
+                child: Image.asset(AppImages().books, height: 50, width: 50),
+              ),
+              UIHelper.horizontalSpaceSmall,
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    UIHelper.titleTextStyle("Notification!", 18, false, fontclr: appColors.whiteclr),
+                    UIHelper.verticalSpaceSmall,
+                    UIHelper.titleTextStyle("Now is the time to read the book, you can change it in setting.", 15, false, fontclr: appColors.grey1),
+                  ],
+                ),
+              )
+            ],
           ),
-          UIHelper.horizontalSpaceSmall,
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                UIHelper.titleTextStyle("Notification!", 18, false, fontclr: appColors.whiteclr),
-                UIHelper.verticalSpaceSmall,
-                UIHelper.titleTextStyle("Now is the time to read the book, you can change it in setting.", 15, false, fontclr: appColors.grey1),
-              ],
-            ),
-          )
-        ],
-      ),
+        ),
+        Positioned(
+          right: 10,
+          top: 10,
+          child: Icon(
+            Icons.info_outlined,
+            color: appColors.whiteclr,
+          ),
+        )
+      ],
     );
   }
 
